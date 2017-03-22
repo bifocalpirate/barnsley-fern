@@ -3,7 +3,12 @@
 
 ![alt tag](https://raw.githubusercontent.com/skrillex581/barnsley-fern/master/fern-img.gif)
 
-This application draws an IFS fractal.  By default it draws a barnsley ferns. Play around with the ruleset, or add your own, to explore additional fractals.
+This application draws an IFS fractal.  By default it draws a barnsley fern. Play around with the ruleset, or add your own, to explore additional fractals.
 
 * https://en.wikipedia.org/wiki/Barnsley_fern
 * https://en.wikipedia.org/wiki/Iterated_function_system
+
+
+Thanks to the people behind [p5.js](https://p5js.org) and [Quicksettings.js](https://github.com/bit101/quicksettings)
+
+While you can edit rules using the sliders, and add additional rules that part isn't well tested. You're welcome to create a fork.

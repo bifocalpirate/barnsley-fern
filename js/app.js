@@ -11,11 +11,48 @@ var panelCount = 0; //until the user clicks apply settings do we use the new con
 /* globals */
 var x = Math.random(), y = Math.random();
 var rules = [];
-var currentRuleSetName = "";
-var ruleSets = {
-    "Thelypteridaceae":[
+var currentRuleSetName = "Barnsleyfern";
+var ruleSets = {    
+    "Barnsleyfern":[          
                 {
-    
+                    a:0,
+                    b:0,
+                    c:0,
+                    d:0.16,
+                    x:0,
+                    y:0,
+                    p:0.01 //probability of selection        
+                },
+                {
+                    a:0.85,
+                    b:0.04,
+                    c:-0.04,
+                    d:0.85,
+                    x:0,
+                    y:1.60,
+                    p:0.85
+                },
+                {
+                    a:-0.15,
+                    b:0.28,
+                    c:0.26,
+                    d:0.24,
+                    x:0,
+                    y:0.44,
+                    p:0.07
+                },
+                {
+                    a:0.2,
+                    b:-0.26,
+                    c:0.23,
+                    d:0.22,
+                    x:0,
+                    y:1.60,
+                    p:0.07
+                }
+            ],
+            "Thelypteridaceae":[
+                {    
                     a:0,
                     b:0,
                     c:0,
@@ -51,47 +88,7 @@ var ruleSets = {
                     y:0.12,
                     p:0.07
                 }                                
-    ],
-    "Barnsleyfern":[  
-                {
-                    a:0.85,
-                    b:0.04,
-                    c:-0.04,
-                    d:0.85,
-                    x:0,
-                    y:1.60,
-                    p:0.85
-                },
-                {
-                    a:-0.15,
-                    b:0.28,
-                    c:0.26,
-                    d:0.24,
-                    x:0,
-                    y:0.44,
-                    p:0.07
-                },
-                {
-                    a:0.2,
-                    b:-0.26,
-                    c:0.23,
-                    d:0.22,
-                    x:0,
-                    y:1.60,
-                    p:0.07
-                },    
-                {
-                    a:0,
-                    b:0,
-                    c:0,
-                    d:0.16,
-                    x:0,
-                    y:0,
-                    p:0.01 //probability of selection        
-                }
-            ]
-
-    
+    ]    
 }
 
 function addPanel(config)
@@ -100,7 +97,7 @@ function addPanel(config)
             .setDraggable(true)
             .setCollapsible(true)                                                   
             Object.keys(config).forEach(function(k) {
-                p.addRange(k,0,1,config[k],0.01);                             
+                p.addRange(k,-1,1,config[k],0.01);                             
             });
             panels.push(p);
             console.log(p.getValuesAsJSON());
@@ -136,7 +133,10 @@ function resetRules()
 
 function applyRules()
 {        
-    console.log('Apply rules');        
+    console.log('Apply rules');            
+    
+    fill('pink');    
+    rect(-CANVAS_WIDTH/2,-CANVAS_HEIGHT,CANVAS_WIDTH,CANVAS_HEIGHT);
     clear();    //clear the canvas
     //cycle all the way up (read all the rules in)
     panelCount = panels.length;
@@ -156,7 +156,7 @@ function addRule()
         y:0,
         p:0.01 //probability of selection        
     }
-    addPanel("Rule " + (panels.length+1),d);
+    addPanel("Rule " + (panels.length+1),d);    
 }
 
 
