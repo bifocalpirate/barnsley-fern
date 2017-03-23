@@ -1,6 +1,8 @@
 # Barnsley Fern
 * You need an ES2016-compatible browser for this to work. Chrome should work. 
 
+tldr; [View it all here](https://skrillex581.github.io/barnsley-fern/)
+
 ![alt tag](https://raw.githubusercontent.com/skrillex581/barnsley-fern/master/fern-img.gif)
 
 This application draws an IFS fractal.  By default it draws a barnsley fern. Play around with the ruleset, or add your own, to explore additional fractals.
