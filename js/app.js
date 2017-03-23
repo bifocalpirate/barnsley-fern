@@ -133,12 +133,9 @@ function resetRules()
 
 function applyRules()
 {        
-    console.log('Apply rules');            
-    
-    fill('pink');    
-    rect(-CANVAS_WIDTH/2,-CANVAS_HEIGHT,CANVAS_WIDTH,CANVAS_HEIGHT);
-    clear();    //clear the canvas
-    //cycle all the way up (read all the rules in)
+    console.log('Applying rules');                
+    fill('whit');    
+    rect(-CANVAS_WIDTH/2,-CANVAS_HEIGHT,CANVAS_WIDTH,CANVAS_HEIGHT);        
     panelCount = panels.length;
 }
 
